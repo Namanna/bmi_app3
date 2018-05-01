@@ -8,13 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.DecimalFormat;
 
 import static android.renderscript.ScriptGroup.*;
 
 public class input extends AppCompatActivity {
 Button button;
 EditText editText, editText2;
-TextView text2;
+TextView text2, text5;
 
 
     @Override
@@ -25,6 +28,7 @@ TextView text2;
         editText2=(EditText)findViewById(R.id.editText2);
         button=(Button)findViewById(R.id.button);
         text2=(TextView)findViewById(R.id.text2);
+        text5=(TextView)findViewById(R.id.text5);
 
     }
         public void btnClick(View v)
@@ -37,14 +41,50 @@ TextView text2;
 
 
 
-            a=editText.getText().toString();
-            an = Float.parseFloat(a);
-            b=editText2.getText().toString();
-            bn =  Float.parseFloat(b);
-            rf = an/(bn*bn);
-            rs = Float.toString(rf);
-            text2.setText(rs);
+            a  = editText.getText().toString();
 
+            an = Float.parseFloat(a);
+            if(an==0)
+            {
+                Toast.makeText(this,"Giá trị không thể bằng 0!",Toast.LENGTH_SHORT).show();
+                editText.selectAll();
+
+            }
+            else {
+                b = editText2.getText().toString();
+                bn = Float.parseFloat(b);
+                if(bn==0)
+                {
+                    Toast.makeText(this,"Giá trị không thể bằng 0!",Toast.LENGTH_SHORT).show();
+                    editText2.selectAll();
+                }
+                else {
+                    rf = an / (bn * bn);
+                    /* 2 dong sau la de lam tron so*/
+                    rf = Math.round(rf * 1000) / 10;
+                    rf = rf / 100;
+
+                    rs = Float.toString(rf);
+                    text2.setText(rs);
+
+                    if (rf < 18.5) {
+                        text5.setText("Bạn quá gầy!");
+                    } else if (18.5 <= rf && rf <= 22.9) {
+                        text5.setText("Ok, ko gầy cũng chẳng béo");
+                    } else if (23 <= rf && rf <= 24.9) {
+                        text5.setText("Hơi hơi béo rồi");
+                    } else if (25 <= rf && rf <= 29.9) {
+                        text5.setText("Béo phì!");
+                    } else if (30 <= rf && rf <= 39.9) {
+                        text5.setText("Béo lắm rồi! Ăn ít thôi!");
+                    } else if (rf >= 40) {
+                        text5.setText("Kiểm tra xem dữ liệu nhập vào có chính xác không, nếu chính xác, chúc mừng! Bạn là FAT MAN đích thực!");
+                    } else {
+                        text5.setText("Lỗi! Xin hãy thử lại!");
+                    }
+
+                }
+            }
         }
 
 }

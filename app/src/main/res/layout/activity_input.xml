@@ -12,13 +12,13 @@
         android:layout_height="45dp"
         android:text="Tính BMI!"
         android:textColor="#e7d5e3"
-        android:textSize="100px"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.084" />
 
     <Button
         android:id="@+id/button"
@@ -29,15 +29,17 @@
         android:text="Tính"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.557" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="186dp"
-        android:layout_height="45dp"
+        android:layout_width="127dp"
+        android:layout_height="48dp"
         android:ems="10"
+        android:inputType="numberDecimal"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,29 +57,29 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="182dp"
+        android:layout_width="122dp"
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.732"
+        app:layout_constraintHorizontal_bias="0.753"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.466" />
 
     <TextView
         android:id="@+id/text2"
         android:layout_width="121dp"
         android:layout_height="31dp"
         android:text=""
-        android:textSize="70px"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.766"
+        app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
+        app:layout_constraintVertical_bias="0.722" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -97,8 +99,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cân nặng:"
-        android:textSize="70px"
+        android:text="Cân nặng (kg):"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
@@ -110,8 +112,8 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chiều cao:"
-        android:textSize="70px"
+        android:text="Chiều cao (m):"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.109"
@@ -124,12 +126,26 @@
         android:layout_width="86dp"
         android:layout_height="34dp"
         android:text="Kết quả:"
-        android:textSize="70px"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893" />
+        app:layout_constraintVertical_bias="0.725" />
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="301dp"
+        android:layout_height="133dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
 
 </android.support.constraint.ConstraintLayout>
