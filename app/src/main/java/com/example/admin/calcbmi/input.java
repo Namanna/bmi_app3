@@ -44,18 +44,23 @@ TextView text2, text5;
             a  = editText.getText().toString();
 
             an = Float.parseFloat(a);
-            if(an==0)
-            {
-                Toast.makeText(this,"Giá trị không thể bằng 0!",Toast.LENGTH_SHORT).show();
-                editText.selectAll();
 
-            }
-            else {
+
                 b = editText2.getText().toString();
                 bn = Float.parseFloat(b);
-                if(bn==0)
+                if(an==0 && bn==0)
                 {
                     Toast.makeText(this,"Giá trị không thể bằng 0!",Toast.LENGTH_SHORT).show();
+
+                }
+                else if (an==0)
+                {
+                    Toast.makeText(this, "Số kg không thể bằng 0!",Toast.LENGTH_SHORT).show();
+                    editText.selectAll();
+                }
+                else if (bn==0)
+                {
+                    Toast.makeText(this, "Số M không thể bằng 0!",Toast.LENGTH_SHORT).show();
                     editText2.selectAll();
                 }
                 else {
@@ -87,4 +92,4 @@ TextView text2, text5;
             }
         }
 
-}
+
